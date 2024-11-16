@@ -1,0 +1,125 @@
+.wrapper {
+    font-family: sans-serif;
+    background-color: #000000;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Top bar spanning full width with content spaced out */
+.topBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    background-color: #000000;
+    z-index: 1000;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff;
+}
+
+/* Logo styling */
+.topBar .logo {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Button styling in top bar */
+.topBar button {
+    background-color: #fff;
+    color: #111;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+.topBar button:hover {
+    background-color: #ddd;
+    transform: translateY(-3px);
+}
+
+/* Content wrapper below the top bar */
+.contentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    padding: 5rem 2rem;
+    margin-top: 6rem; /* Adjusted to ensure content is not hidden behind top bar */
+    /* box-sizing: border-box; */
+}
+
+/* Main container with text and image */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 80%;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+/* Text content */
+.textContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    text-align: left;
+}
+
+/* Heading and paragraph styles */
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* General button styling */
+button {
+    background-color: #f0eeee;
+    color: #121111;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #838080;
+    transform: translateY(-5px);
+}
+
+/* Image container styling */
+.imageContainer {
+    max-width: 400px;
+    flex: 1;
+    opacity: 0.8;
+}
+
+.imageContainer img {
+    width: 100%;
+    border-radius: 10px;
+}
