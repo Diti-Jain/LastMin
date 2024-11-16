@@ -1,0 +1,163 @@
+body {
+    font-family: sans-serif;
+    background-color: #1d1c1c;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top bar spanning full width with content spaced out */
+.top-bar {
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: space-between; /* Space between logo and button */
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: #1d1c1c;
+    z-index: 1000;
+    border-bottom: 1px solid #fff;
+    padding: 1rem 2rem; /* Adjust padding for spacing around the content */
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+}
+
+/* Line after the top bar */
+.line {
+    width: 100%;
+    border-top: 1px solid #fff; /* Changed to border-top for better visibility */
+    margin-top: 10px;
+    position: absolute;
+    top: 60px; /* Adjust this based on your top bar height */
+    left: 0;
+}
+
+/* Logo styling */
+.top-bar .logo {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Button styling */
+.top-bar button {
+    background-color: #fff;
+    color: #111;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: auto; /* Ensures button stays within the container */
+}
+
+/* Button hover effect */
+.top-bar button:hover {
+    background-color: #ddd;
+    transform: translateY(-3px);
+}
+
+/* Content wrapper below the top bar */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    padding: 5rem 2rem;
+    margin-top: 6rem; /* Adjusted space to prevent overlap with the fixed top bar */
+    box-sizing: border-box;
+}
+
+/* Main container with text and image */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 80%;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+/* Text content */
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    text-align: left;
+}
+
+/* Heading and paragraph styles */
+h1, h2, p, .image-container {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* General button styling */
+button {
+    background-color: #fff;
+    color: #111;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #ddd;
+    transform: translateY(-5px);
+}
+
+/* Hover effects for text and image */
+.text-content:hover h1,
+.text-content:hover h2,
+.text-content:hover + .image-container {
+    transform: translateY(-10px);
+    text-shadow: 0 0 10px #fff;
+    opacity: 1;
+}
+
+/* Image container styling */
+.image-container {
+    max-width: 400px;
+    flex: 1;
+    opacity: 0.8;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Hover effects for images */
+.image-container:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
