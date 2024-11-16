@@ -1,6 +1,7 @@
+/* Wrapper styling */
 .wrapper {
     font-family: sans-serif;
-    background-color: #000000;
+    background-color: #202121;
     color: #fff;
     flex-direction: column;
     align-items: center;
@@ -14,7 +15,7 @@
     justify-content: space-between;
     align-items: center;
     top: 0;
-    background-color: #000000;
+    background-color: #202121;
     z-index: 1000;
     padding: 1rem 1rem;
     box-sizing: border-box;
@@ -27,20 +28,22 @@
     color: #fff;
 }
 
-/* Button styling in top bar */
+/* Top bar button styling */
 .topBar button {
     background-color: #fff;
     color: #111;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Button hover effect */
+/* Top bar button hover effect */
 .topBar button:hover {
     background-color: #ddd;
     transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Glow effect */
 }
 
 /* Content wrapper below the top bar */
@@ -52,7 +55,6 @@
     flex: 1;
     padding: 5rem 2rem;
     margin-top: 6rem; /* Adjusted to ensure content is not hidden behind top bar */
-    /* box-sizing: border-box; */
 }
 
 /* Main container with text and image */
@@ -74,6 +76,7 @@
     gap: 1rem;
     flex: 1;
     text-align: left;
+    transition: transform 0.5s ease, opacity 0.5s ease, text-shadow 0.5s ease;
 }
 
 /* Heading and paragraph styles */
@@ -93,7 +96,7 @@ p {
     margin: 0;
 }
 
-/* General button styling */
+/* General button styling (applies to both buttons) */
 button {
     background-color: #f0eeee;
     color: #121111;
@@ -102,14 +105,15 @@ button {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     margin-top: 1rem;
 }
 
-/* Hover effect for buttons */
+/* Hover effect for both buttons */
 button:hover {
-    background-color: #838080;
+    background-color: #ddd;
     transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Glow effect */
 }
 
 /* Image container styling */
@@ -117,9 +121,43 @@ button:hover {
     max-width: 400px;
     flex: 1;
     opacity: 0.8;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .imageContainer img {
     width: 100%;
     border-radius: 10px;
+}
+
+/* Apply animation effects when hovering over the Get Started button */
+button:hover + .container .textContent,
+button:hover + .container .imageContainer {
+    transform: scale(1.05);
+}
+
+/* Text content glow and zoom-in effect when hovering over the "Get Started" button */
+button:hover ~ .container .textContent {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1); /* Glowing effect on text */
+}
+
+button:hover ~ .container .imageContainer {
+    transform: scale(1.1); /* Slight zoom */
+    opacity: 1; /* Ensure full opacity */
+}
+
+/* New hover effect for text content and image when hovering over the .textContent */
+.textContent:hover h1,
+.textContent:hover h2,
+.textContent:hover + .imageContainer {
+    transform: translateY(-10px); /* Move content up */
+    text-shadow: 0 0 10px #fff; /* Add glowing effect */
+    opacity: 1; /* Make sure content is fully visible */
+}
+
+/* Additional hover effect for the image */
+.textContent:hover + .imageContainer img {
+    transform: translateY(-10px); /* Move the image up slightly */
+    opacity: 1; /* Ensure image is fully visible */
+    box-shadow: 0 0 20px rgba(163, 39, 39, 0.8); /* Glow effect around the image */
 }
