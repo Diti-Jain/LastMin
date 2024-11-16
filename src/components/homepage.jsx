@@ -20,7 +20,8 @@ const HomePage = () => {
                 <div className={styles.container}>
                     {/* Text content section */}
                     <div className={styles.textContent}>
-                        <h1>LastMin</h1>
+                        <h1 className={styles.h1}>LastMin</h1>
+
                         <h2>Your Last Minute Tutor</h2>
                         <p>
                             Turn PDFs and videos into bite-sized insights and get answers to your

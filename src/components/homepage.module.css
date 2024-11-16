@@ -1,4 +1,14 @@
 /* Wrapper styling */
+body {
+    background-color: #202121;
+    color: #333;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
 .wrapper {
     font-family: sans-serif;
     background-color: #202121;
@@ -99,7 +109,7 @@ p {
 /* General button styling (applies to both buttons) */
 button {
     background-color: #f0eeee;
-    color: #121111;
+    color: #202121;
     padding: 0.5rem 1.5rem;
     border: none;
     border-radius: 5px;
@@ -159,5 +169,5 @@ button:hover ~ .container .imageContainer {
 .textContent:hover + .imageContainer img {
     transform: translateY(-10px); /* Move the image up slightly */
     opacity: 1; /* Ensure image is fully visible */
-    box-shadow: 0 0 20px rgba(163, 39, 39, 0.8); /* Glow effect around the image */
+    box-shadow: 0 0 20px rgba(17, 16, 16, 0.8); /* Glow effect around the image */
 }
