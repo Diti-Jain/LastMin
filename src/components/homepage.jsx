@@ -2,9 +2,9 @@ import React from 'react';
 import './homepage.css';
 import logo from '../assets/image1.png';
 
-const App = () => {
+const HomePage = () => {
     const goToNextPage = () => {
-        window.location.href = "fileupload.html"; // Update URL as needed
+        window.location.href = "file"; // Update URL as needed
     };
 
     return (
@@ -33,4 +33,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default HomePage;
