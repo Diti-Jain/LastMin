@@ -1,0 +1,58 @@
+/* App.css */
+
+/* General styling for the whole container */
+.app-body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Wrapper styling for the content */
+  .app-wrapper {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+  }
+  
+  /* Styling for the paragraph */
+  .app-paragraph {
+    background-color: #505050; /* Grey color for the box */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  /* Styling for the Generate Quiz button */
+  .app-button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Center the Quiz Questions section beneath the button */
+  .app-quiz-title {
+    margin-top: 30px; /* Add some space between the button and the quiz questions */
+  }
+  
+  .app-quiz-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    text-align: left;
+    max-width: 600px; /* Center the quiz questions */
+  }
+  
+  .app-quiz-item {
+    margin-bottom: 10px;
+  }
+  
