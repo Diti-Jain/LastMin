@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import './fileupload.css'; // Importing CSS styles
 
 const VideoUpload = () => {
-    const [videoFile, setVideoFile] = useState(null);
+    const [pdfFile, setPdfFile] = useState(null); // Updated to pdfFile
     const [videoLink, setVideoLink] = useState('');
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleUpload = () => {
-        if (videoFile) {
-            alert("Upload functionality needs to be implemented.");
-            // Implement upload logic here
+        if (pdfFile) {
+            // Navigate to the Summary page on successful file selection
+            navigate('/summary');
         } else {
-            alert("Please select a video file to upload.");
+            alert("Please select a PDF file to upload.");
         }
     };
 
@@ -29,11 +31,11 @@ const VideoUpload = () => {
             <div className="outer-container">
                 <div className="container">
                     <div className="box">
-                        <h2>Upload Files</h2>
+                        <h2>Upload PDF Files</h2> {/* Updated label */}
                         <input 
                             type="file" 
-                            accept="video/*" 
-                            onChange={(e) => setVideoFile(e.target.files[0])}
+                            accept="application/pdf" // Updated to accept only PDF files
+                            onChange={(e) => setPdfFile(e.target.files[0])} // Updated to setPdfFile
                         />
                         <button onClick={handleUpload}>Upload</button>
                     </div>

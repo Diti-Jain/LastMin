@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/homepage.jsx';
 import Fileupload from './components/fileupload.jsx'
+import Summary from './components/summary.jsx'; 
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/file" element={<Fileupload />} />
+        <Route path="/summary" element={<Summary />} />
       </Routes>
     </Router>
   );
