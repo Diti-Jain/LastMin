@@ -17,7 +17,10 @@ function App() {
       <div className="app-wrapper">
         <h1>Summary</h1>
         <p className="app-paragraph">
-          1. Introduce your idea in brief - Many moms face mental struggles...
+          1. Introduce your idea in brief - Many moms face mental struggles...jshdffhwifhwlncl;wc'wkc
+          wfejfhblefjjbnvjfbnvlkjfnlkn
+          jshbgcfsbcflksnfciubfn;
+          
           {/* truncated content for brevity */}
         </p>
         <button onClick={generateQuiz} className="app-button">
