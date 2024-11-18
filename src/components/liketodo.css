@@ -1,31 +1,40 @@
-.liketodo-container {
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202121; /* Optional: sets background color for the whole page */
+  }
+  
+  .liketodo-container {
     padding: 20px;
-    background-color: #242426;
+    background-color: #202121;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 500%;
+    width: 100%;
     max-width: 700px;
     color: #fff;
     text-align: center;
     height: 700px;
-}
-
-.liketodo-container h1 {
+  }
+  
+  .liketodo-container h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-}
-
-.liketodo-container h2 {
+  }
+  
+  .liketodo-container h2 {
     color: #ddd;
     font-size: 1.5rem;
     margin: 20px 0;
-}
-
-.liketodo-container button {
+  }
+  
+  .liketodo-container button {
     background-color: #fff;
     color: #111213;
     border: none;
@@ -37,14 +46,14 @@
     margin-top: 20px;
     width: 200px;
     text-align: center;
-}
-
-.liketodo-container button:hover {
+  }
+  
+  .liketodo-container button:hover {
     background-color: #f1f1f1;
     color: #000;
-}
-
-.liketodo-container input[type="text"] {
+  }
+  
+  .liketodo-container input[type="text"] {
     padding: 8px;
     font-size: 1rem;
     border-radius: 5px;
@@ -52,8 +61,9 @@
     width: 100%;
     max-width: 300px;
     margin-top: 20px;
-}
-
-.liketodo-container p {
+  }
+  
+  .liketodo-container p {
     margin: 10px 0;
-}
+  }
+  

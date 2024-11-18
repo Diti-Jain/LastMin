@@ -76,6 +76,7 @@ body {
     width: 80%;
     gap: 2rem;
     box-sizing: border-box;
+    background-color: #202121;
 }
 
 /* Text content */
@@ -169,5 +170,5 @@ button:hover ~ .container .imageContainer {
 .textContent:hover + .imageContainer img {
     transform: translateY(-10px); /* Move the image up slightly */
     opacity: 1; /* Ensure image is fully visible */
-    box-shadow: 0 0 20px rgba(17, 16, 16, 0.8); /* Glow effect around the image */
+    box-shadow: 0 0 20px rgba(185, 183, 183, 0.8); /* Glow effect around the image */
 }
