@@ -1,44 +1,33 @@
-/* liketodo.css */
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #202121;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-}
-
-.container {
-    text-align: center;
+.liketodo-container {
     padding: 20px;
-    background-color: #202121;
+    background-color: #242426;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Align children in a column */
-    align-items: center; /* Center all children horizontally */
-    justify-content: center; /* Center all children vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500%;
+    max-width: 700px;
+    color: #fff;
+    text-align: center;
+    height: 700px;
 }
 
-h1 {
-    color: #fff;
+.liketodo-container h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-h2 {
+.liketodo-container h2 {
     color: #ddd;
     font-size: 1.5rem;
     margin: 20px 0;
 }
 
-button {
+.liketodo-container button {
     background-color: #fff;
-    color: #282c34;
+    color: #111213;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
@@ -47,27 +36,24 @@ button {
     transition: background-color 0.3s, color 0.3s;
     margin-top: 20px;
     width: 200px;
-    text-align: center; /* Ensure the text inside the button is centered */
+    text-align: center;
 }
 
-button:hover {
+.liketodo-container button:hover {
     background-color: #f1f1f1;
     color: #000;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-input[type="text"] {
+.liketodo-container input[type="text"] {
     padding: 8px;
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 100%;
     max-width: 300px;
+    margin-top: 20px;
+}
+
+.liketodo-container p {
+    margin: 10px 0;
 }

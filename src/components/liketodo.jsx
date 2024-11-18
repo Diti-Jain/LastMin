@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './liketodo.css'; // Import the specific CSS for this page
 import axios from "axios";
 
-
 function LikeTodoPage() {
   const [videoLink, setVideoLink] = useState("");
   const [loading, setLoading] = useState(false); // Loading state
@@ -60,19 +59,20 @@ function LikeTodoPage() {
       setLoading(false); // Stop loading once API call finishes
     }
   };
+
   return (
-    <div className="container">
+    <div className="liketodo-container">
       <h1>What Would You Like to Do?</h1>
       <button onClick={handleSummarizeClick}>Summarize Content</button>
       <p>OR</p>
       <h2>Combined summary of PDF and Video</h2>
-        <input
-          type="text"
-          value={videoLink}
-          onChange={(e) => setVideoLink(e.target.value)}
-          placeholder="Paste video link here..."
-        />
-        <button type="submit" onClick={handleVideoSubmit}>Submit</button>
+      <input
+        type="text"
+        value={videoLink}
+        onChange={(e) => setVideoLink(e.target.value)}
+        placeholder="Paste video link here..."
+      />
+      <button type="submit" onClick={handleVideoSubmit}>Submit</button>
     </div>
   );
 }

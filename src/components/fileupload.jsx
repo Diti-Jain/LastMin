@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
-import './fileupload.css'; // Importing CSS styles
+import { useNavigate } from 'react-router-dom'; 
+import './fileupload.css'; 
 import axios from "axios";
 
 function VideoUpload() {
@@ -43,7 +43,7 @@ function VideoUpload() {
 
   const handleVideoSubmit = async () => {
     if (videoLink) {
-      setLoading(true); // Start loading when video submit begins
+      setLoading(true); 
       try {
         const response = await axios.post(
           "http://127.0.0.1:5000/summarize_youtube",
@@ -60,43 +60,43 @@ function VideoUpload() {
       } catch (error) {
         console.error("Error processing the video link:", error);
         alert("Error processing the video link. Please try again.");
-      } finally {
-        setLoading(false); // Stop loading once API call finishes
+      } finally { setLoading(false); 
       }
     } else {
       alert("Please enter a video link.");
     }
   };
-    return (
-        <div className="wrapper">
-            <h1>What would you like to do?</h1>
-            <div className="outer-container">
-                <div className="container">
-                    <div className="box">
-                        <h2>Upload PDF Files</h2> {/* Updated label */}
-                        <input 
-                            type="file" 
-                            accept="application/pdf" // Updated to accept only PDF files
-                            onChange={handleFileChange} // Updated to setPdfFile
-                        />
-                        <button onClick={handleFileSubmit}>Upload</button>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="box">
-                        <h2>Enter Video Link</h2>
-                        <input 
-                            type="text" 
-                            placeholder="Enter video link" 
-                            value={videoLink}
-                            onChange={(e) => setVideoLink(e.target.value)}
-                        />
-                        <button onClick={handleVideoSubmit}>Submit</button>
-                    </div>
-                </div>
-            </div>
+
+  return (
+    <div className="wrapper">
+      <h1>What would you like to do?</h1>
+      <div className="outer-container">
+        <div className="container">
+          <div className="box">
+            <h2>Upload PDF Files</h2>
+            <input 
+              type="file" 
+              accept="application/pdf" 
+              onChange={handleFileChange} 
+            />
+            <button onClick={handleFileSubmit}>Upload</button>
+          </div>
         </div>
-    );
+        <div className="container">
+          <div className="box">
+            <h2>Enter Video Link</h2>
+            <input 
+              type="text" 
+              placeholder="Enter video link" 
+              value={videoLink}
+              onChange={(e) => setVideoLink(e.target.value)}
+            />
+            <button onClick={handleVideoSubmit}>Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default VideoUpload;

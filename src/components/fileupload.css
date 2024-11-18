@@ -1,6 +1,4 @@
-body{
-    background-color: #000000;
-}
+/* fileupload.css */
 
 .wrapper {
     display: flex;
@@ -19,13 +17,14 @@ h1 {
 
 .outer-container {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Space between the boxes */
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px; /* Adjust the width to suit your design */
+    justify-content: center; /* Center the boxes horizontally */
 }
 
 .container {
-    background-color: #202121;
+    background-color: #d9dada;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -34,6 +33,8 @@ h1 {
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    min-width: 300px; /* Minimum width for each container box */
 }
 
 .container:hover {
@@ -42,11 +43,12 @@ h1 {
 }
 
 .box {
-    background-color: #252727;
+    background-color: #333535;
     padding: 50px;
     border-radius: 10px;
     text-align: center;
     width: 100%;
+    position: relative;
 }
 
 .box h2 {

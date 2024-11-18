@@ -11,17 +11,18 @@
   .summary-title {
     text-align: center; /* Center the title */
     margin-bottom: 20px; /* Space below the title */
-    font-size: 2rem; /* Title font size */
+    font-size: 4rem; /* Title font size */
   }
   
   .summary-box {
-    background-color: #202121; /* White with transparency */
+    background-color: #4b4d4d; /* White with transparency */
     border-radius: 10px; /* Rounded corners */
     padding: 20px; /* Padding inside the box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     max-width: 900px; /* Maximum width for the summary box */
     width: 100%; /* Full width */
     margin-bottom: 20px; /* Space below the summary box */
+    color: rgb(248, 249, 249);
   }
   
   .generate-quiz-button {
