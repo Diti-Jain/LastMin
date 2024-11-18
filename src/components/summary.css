@@ -1,66 +1,87 @@
-/* App.css */
-
-/* General styling for the whole container */
-.app-body {
-    margin: 10px;
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
+.summary-page {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Wrapper styling for the content */
-.app-wrapper {
-    text-align: center;
-    padding: 20px;
-    max-width: 1000px; /* Increase the max width of the wrapper */
-}
-
-/* Styling for the paragraph with an even larger text box */
-.app-paragraph {
-    background-color: #505050; /* Grey color for the box */
-    padding: 30px; /* Reduced padding to fit more content */
-    border-radius: 8px;
-    text-align: left; /* Align text to the left for better readability */
-    max-width: 900px; /* Increase width for a significantly larger text box */
-    margin: 0 auto; /* Center the paragraph */
-    font-size: 20px; /* Increased font size for better readability */
-    line-height: 1.6; /* Added line-height for better readability */
-    white-space: normal; /* Allow text to wrap */
-    word-wrap: break-word; /* Ensure long words break and don't overflow */
-    height: auto; /* Allow the height to adjust automatically based on content */
-    min-height: 300px; /* Ensure a minimum height for the box */
-    overflow: hidden; /* Prevent overflow but let the box expand with content */
-}
-
-/* Styling for the Generate Quiz button */
-.app-button {
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-/* Center the Quiz Questions section beneath the button */
-.app-quiz-title {
-    margin-top: 30px; /* Add some space between the button and the quiz questions */
-}
-
-.app-quiz-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px auto;
-    text-align: left;
-    max-width: 600px; /* Center the quiz questions */
-}
-
-.app-quiz-item {
-    margin-bottom: 10px;
-}
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    padding: 20px; /* Padding around the page */
+    background-color: #202121; /* Light background color */
+    min-height: 100vh; /* Cover full viewport height */
+  }
+  
+  .summary-title {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 2rem; /* Title font size */
+  }
+  
+  .summary-box {
+    background-color: #202121; /* White with transparency */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 900px; /* Maximum width for the summary box */
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space below the summary box */
+  }
+  
+  .generate-quiz-button {
+    padding: 10px 15px; /* Padding inside the button */
+    background-color: #080808; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .generate-quiz-button:hover {
+    background-color: #3f4140; /* Darker green on hover */
+  }
+  
+  /* Quiz section styles */
+  .quiz-section {
+    background-color: #202121; /* White background for the quiz box */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 600px; /* Maximum width for the quiz box */
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Space above the quiz section */
+    max-height: 300px; /* Fixed height for scrollable box */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .quiz-section h2 {
+    text-align: center; /* Center the quiz section title */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 1.5rem; /* Title font size */
+  }
+  
+  .quiz-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+  
+  .quiz-item {
+    background-color: #202121; /* Light grey for each question/answer pair */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside each question-answer item */
+    margin-bottom: 15px; /* Space between items */
+    word-wrap: break-word; /* Break long words to fit within box */
+  }
+  
+  .quiz-item p {
+    margin: 0; /* Remove default paragraph margin */
+  }
+  
+  .quiz-item p:first-child {
+    font-weight: bold; /* Make the question text bold */
+  }
+  
+  .quiz-item p strong {
+    font-weight: normal; /* Reset strong tag inside question */
+  }
+  
+  .quiz-item p + p {
+    margin-top: 10px; /* Space between question and answer */
+  }

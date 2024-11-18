@@ -1,46 +1,81 @@
-import React, { useState } from 'react';
-import './summary.css';
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import "./summary.css"; // Import the CSS file for styling
+import axios from "axios";
 
-function App() {
-  const [quizQuestions, setQuizQuestions] = useState(null);
+function SummaryPage() {
+  const location = useLocation();
+  const { summary, combinedText } = location.state || {
+    summary: "No summary available.",
+    combinedText: "No combined text available.",
+  };
+  const [quiz, setQuiz] = useState([]); // State to store generated quiz
+  const [quizGenerated, setQuizGenerated] = useState(false); // Track if quiz is generated
 
-  const generateQuiz = () => {
-    setQuizQuestions([
-      { question: 'What is the main focus of the SmartMoms app?', answer: 'Mental health support for mothers during and after pregnancy' },
-      { question: 'Which country does the app have a special focus on?', answer: 'India' },
-      { question: 'What are some features offered by the app?', answer: 'Guided meditation, exercise tips, heartwarming stories' },
-    ]);
+  const handleGenerateQuiz = async () => {
+    try {
+      // Send the summary text to the backend to generate a quiz
+      const response = await axios.post(
+        "http://127.0.0.1:5000/generate_quiz",
+        { text: combinedText }, // Use summary text as input for quiz generation
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      // Store the quiz questions in state
+      const generatedQuiz = response.data.quiz;
+      if (generatedQuiz && generatedQuiz.length > 0) {
+        setQuiz(generatedQuiz);
+        setQuizGenerated(true); // Update the state to indicate quiz has been generated
+        alert("Quiz generated successfully!");
+      } else {
+        alert("No questions could be generated from the summary.");
+      }
+    } catch (error) {
+      console.error("Error generating the quiz:", error);
+      alert("Error generating the quiz. Please try again.");
+    }
   };
 
   return (
-    <div className="app-body">
-      <div className="app-wrapper">
-        <h1>Summary</h1>
-        <p className="app-paragraph">
-          1. Introduce your idea in brief - Many moms face mental struggles...jshdffhwifhwlncl;wc'wkc
-          wfejfhblefjjbnvjfbnvlkjfnlkn
-          jshbgcfsbcflksnfciubfn;
-          
-          {/* truncated content for brevity */}
-        </p>
-        <button onClick={generateQuiz} className="app-button">
-          Generate Quiz
+    <div className="summary-page">
+      <h1 className="summary-title">Summary</h1>
+      <div className="summary-box">
+        <p>{summary}</p>
+      </div>
+
+      {/* Wrap the button with a container to center it */}
+      <div className="button-container">
+        <button className="generate-quiz-button" onClick={handleGenerateQuiz}>
+          {quizGenerated ? "Generate Another Set" : "Generate Quiz"}
         </button>
-        {quizQuestions && (
-          <div>
-            <h2 className="app-quiz-title">Quiz Questions</h2>
-            <ul className="app-quiz-list">
-              {quizQuestions.map((q, index) => (
-                <li key={index} className="app-quiz-item">
-                  <strong>{q.question}</strong> - {q.answer}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+      </div>
+
+      {/* Display the generated quiz if available */}
+      <div className="quiz-section">
+        <h2>Generated Quiz</h2>
+        <ul className="quiz-list">
+          {quiz.length > 0 ? (
+            quiz.map((item, index) => (
+              <li key={index} className="quiz-item">
+                <p>
+                  Q{index + 1}: {item.question}
+                </p>
+                <p>
+                  <strong>Answer:</strong> {item.answer}
+                </p>
+              </li>
+            ))
+          ) : (
+            <p>No quiz available. Click "Generate Quiz" to create questions.</p>
+          )}
+        </ul>
       </div>
     </div>
   );
 }
 
-export default App;
+export default SummaryPage;
