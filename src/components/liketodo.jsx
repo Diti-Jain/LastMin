@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { useNavigate } from 'react-router-dom'; 
+import './liketodo.css'; // Import the specific CSS for this page
 
-function App() {
+function LikeTodoPage() {
   const [videoLink, setVideoLink] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleVideoLinkChange = (event) => {
     setVideoLink(event.target.value);
@@ -11,18 +12,17 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // TODO: Handle form submission
     console.log('Video link:', videoLink);
   };
 
   const goToSummaryPage = () => {
-    navigate('/summary'); // Navigate to the summary page
+    navigate('/summary');
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>What Would You Like to Do?</h1>
-      <button onClick={goToSummaryPage}>Summarize Content</button> {/* Added onClick */}
+      <button onClick={goToSummaryPage}>Summarize Content</button>
       <p>OR</p>
       <h2>Combined summary of PDF and Video</h2>
       <form onSubmit={handleSubmit}>
@@ -38,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default LikeTodoPage;

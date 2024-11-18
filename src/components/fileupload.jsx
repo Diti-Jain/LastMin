@@ -1,30 +1,72 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import './fileupload.css'; // Importing CSS styles
+import axios from "axios";
 
-const VideoUpload = () => {
-    const [pdfFile, setPdfFile] = useState(null); // Updated to pdfFile
-    const [videoLink, setVideoLink] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate
+function VideoUpload() {
+    const [fileInputs, setFileInputs] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const [videoLink, setVideoLink] = useState("");
 
-    const handleUpload = () => {
-        if (pdfFile) {
-            // Navigate to the Summary page on successful file selection
-            navigate('/liketodo');
-        } else {
-            alert("Please select a PDF file to upload.");
-        }
-    };
+  const handleFileChange = (event) => {
+    setFileInputs([...event.target.files]);
+  };
 
-    const handleLink = () => {
-        if (videoLink) {
-            alert("Link submission functionality needs to be implemented.");
-            // Implement link submission logic here
-        } else {
-            alert("Please enter a video link.");
-        }
-    };
+  const handleFileSubmit = async () => {
+    if (fileInputs.length > 0) {
+      const formData = new FormData();
+      fileInputs.forEach((file) => formData.append("files", file));
+      setLoading(true);
 
+      try {
+        const response = await axios.post(
+          "http://127.0.0.1:5000/process_files",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        navigate("/liketodo", { state: { text: response.data.text } });
+      } catch (error) {
+        console.error("Error processing the files:", error);
+        alert("Error processing the files. Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      alert("No files uploaded. Please upload at least one file.");
+    }
+  };
+
+  const handleVideoSubmit = async () => {
+    if (videoLink) {
+      setLoading(true); // Start loading when video submit begins
+      try {
+        const response = await axios.post(
+          "http://127.0.0.1:5000/summarize_youtube",
+          { url: videoLink },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        navigate("/liketodo", {
+          state: { transcript: response.data.transcript },
+        });
+      } catch (error) {
+        console.error("Error processing the video link:", error);
+        alert("Error processing the video link. Please try again.");
+      } finally {
+        setLoading(false); // Stop loading once API call finishes
+      }
+    } else {
+      alert("Please enter a video link.");
+    }
+  };
     return (
         <div className="wrapper">
             <h1>What would you like to do?</h1>
@@ -35,9 +77,9 @@ const VideoUpload = () => {
                         <input 
                             type="file" 
                             accept="application/pdf" // Updated to accept only PDF files
-                            onChange={(e) => setPdfFile(e.target.files[0])} // Updated to setPdfFile
+                            onChange={handleFileChange} // Updated to setPdfFile
                         />
-                        <button onClick={handleUpload}>Upload</button>
+                        <button onClick={handleFileSubmit}>Upload</button>
                     </div>
                 </div>
                 <div className="container">
@@ -49,7 +91,7 @@ const VideoUpload = () => {
                             value={videoLink}
                             onChange={(e) => setVideoLink(e.target.value)}
                         />
-                        <button onClick={handleLink}>Submit</button>
+                        <button onClick={handleVideoSubmit}>Submit</button>
                     </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@ h1 {
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: #202121;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -42,7 +42,7 @@ h1 {
 }
 
 .box {
-    background-color: #535151;
+    background-color: #252727;
     padding: 50px;
     border-radius: 10px;
     text-align: center;
