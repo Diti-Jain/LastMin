@@ -10,7 +10,7 @@ const VideoUpload = () => {
     const handleUpload = () => {
         if (pdfFile) {
             // Navigate to the Summary page on successful file selection
-            navigate('/summary');
+            navigate('/liketodo');
         } else {
             alert("Please select a PDF file to upload.");
         }
