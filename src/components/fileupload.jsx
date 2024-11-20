@@ -54,7 +54,7 @@ function VideoUpload() {
             },
           }
         );
-        navigate("/liketodo", {
+        navigate("/liketodo2", {
           state: { transcript: response.data.transcript },
         });
       } catch (error) {

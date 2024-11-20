@@ -5,7 +5,7 @@ import HomePage from './components/homepage.jsx';
 import Fileupload from './components/fileupload.jsx'
 import Summary from './components/summary.jsx'; 
 import Liketodo from './components/liketodo.jsx'
-
+import Liketodo2 from './components/liketodo2.jsx'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/file" element={<Fileupload />} />
         <Route path="/summary" element={<Summary />} />
         <Route path="/liketodo" element={<Liketodo />} />
+        <Route path="/liketodo2" element={<Liketodo2 />}/>
 
       </Routes>
     </Router>

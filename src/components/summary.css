@@ -40,7 +40,7 @@
   
   /* Quiz section styles */
   .quiz-section {
-    background-color: #202121; /* White background for the quiz box */
+    background-color: #d4d4d4; /* White background for the quiz box */
     border-radius: 10px; /* Rounded corners */
     padding: 20px; /* Padding inside the box */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -64,7 +64,7 @@
   }
   
   .quiz-item {
-    background-color: #202121; /* Light grey for each question/answer pair */
+    background-color: #efefef; /* Light grey for each question/answer pair */
     border-radius: 5px; /* Rounded corners */
     padding: 15px; /* Padding inside each question-answer item */
     margin-bottom: 15px; /* Space between items */
